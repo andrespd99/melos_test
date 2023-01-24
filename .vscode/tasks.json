@@ -1,0 +1,93 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Flutter Clean",
+            "hide": true,
+            "type": "flutter",
+            "command": "flutter",
+            "group": "none",
+            "args": [
+                "clean",
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/melos_test_client"
+            }
+        },
+        {
+            "label": "Build Client for iOS",
+            "hide": true,
+            "type": "flutter",
+            "command": "flutter",
+            "group": "build",
+            "args": [
+                "build",
+                "ios",
+                "--flavor",
+                "${input:env}",
+                "--target",
+                "lib/main_${input:env}.dart"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/melos_test_client"
+            }
+        },
+        {
+            "label": "Build Client for Android",
+            "hide": true,
+            "type": "flutter",
+            "command": "flutter",
+            "group": "build",
+            "args": [
+                "build",
+                "appbundle",
+                "--flavor",
+                "${input:env}",
+                "--target",
+                "lib/main_${input:env}.dart"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/melos_test_client"
+            }
+        },
+        {
+            "label": "Flutter: Build iOS & Android",
+            "type": "shell",
+            "detail": "Builds the iOS and Android clients for the selected environment.",
+            "dependsOn": [
+                "Flutter Clean",
+                "Build Client for iOS",
+                "Build Client for Android"
+            ],
+            "dependsOrder": "sequence",
+            "group": "build",
+        },
+    ],
+    "inputs": [
+        {
+            "id": "env",
+            "type": "pickString",
+            "description": "Select environment to build for. Defaults to production.",
+            "options": [
+                "development",
+                "staging",
+                "production"
+            ],
+            "default": "production"
+        }
+    ]
+}
