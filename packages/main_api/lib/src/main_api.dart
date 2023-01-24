@@ -4,4 +4,6 @@
 class MainApi {
   /// {@macro main_api}
   const MainApi();
+
+  // SOME CHANGE
 }
