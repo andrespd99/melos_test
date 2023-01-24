@@ -1,5 +1,9 @@
 name: melos_test
 
+command:
+    version:
+      updateGitTagRefs: true
+
 packages:
   - '*'
   - packages/**
@@ -13,4 +17,6 @@ scripts:
     select-package:
       flutter: true
       dir-exists: test
+  
+  
   
