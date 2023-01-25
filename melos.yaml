@@ -17,6 +17,9 @@ scripts:
     select-package:
       flutter: true
       dir-exists: test
+  postclean: >
+    melos exec --flutter --concurrency=3 -- "flutter clean"
+  postbootstrap: dart pub run build_runner build --fail-fast -- 'dart analyze .'
   
   
   
