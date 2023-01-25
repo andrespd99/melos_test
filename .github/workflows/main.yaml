@@ -1,7 +1,8 @@
-name: melos_test_backend
+name: main
 
-on: [pull_request, push]
+on: pull_request
 
 jobs:
-  semantic-pull-request:
+  build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
+  

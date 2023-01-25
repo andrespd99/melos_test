@@ -6,4 +6,6 @@ class MainApi {
   const MainApi();
 
   // SOME CHANGE
+
+  // NEW CHANGE
 }

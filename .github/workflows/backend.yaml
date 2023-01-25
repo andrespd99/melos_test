@@ -1,0 +1,14 @@
+name: backend
+
+on: 
+  pull_request:
+    paths:
+      - 'melos_test_backend/**'
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_channel: stable
+      flutter_version: 3.3.10
+      working_directory: "melos_test_backend/"
