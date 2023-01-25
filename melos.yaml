@@ -1,8 +1,5 @@
 name: melos_test
 
-command:
-    version:
-      updateGitTagRefs: true
 
 packages:
   - '*'
@@ -19,7 +16,8 @@ scripts:
       dir-exists: test
   postclean: >
     melos exec --flutter --concurrency=3 -- "flutter clean"
-  postbootstrap: dart pub run build_runner build --fail-fast -- 'dart analyze .'
+  postbootstrap: >
+    melos exec --flutter --concurrency=3 -- "flutter pub get"
   
   
   
