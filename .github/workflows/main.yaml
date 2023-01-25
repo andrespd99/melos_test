@@ -1,4 +1,4 @@
-name: melos_test_backend
+name: main
 
 on: [pull_request, push]
 
