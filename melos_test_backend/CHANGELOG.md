@@ -1,3 +1,8 @@
+## 2.3.0
+
+ - **FEAT**: I dont know.
+ - **FEAT**: some new feature example.
+
 ## 2.2.0
 
  - **FEAT**: :art: ewqfew.
